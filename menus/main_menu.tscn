@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://doj18q07b6vsv"]
+[gd_scene load_steps=9 format=3 uid="uid://doj18q07b6vsv"]
 
 [ext_resource type="FontFile" uid="uid://pxv3ebfni43q" path="res://assets/chinese rocks rg.ttf" id="1_vaj38"]
 [ext_resource type="Script" path="res://menus/main_menu.gd" id="1_wlelf"]
+[ext_resource type="Texture2D" uid="uid://pr21ma23g0ph" path="res://assets/player.png" id="3_m0yup"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg07k"]
 bg_color = Color(0.49415, 0.118198, 1, 1)
@@ -64,7 +65,7 @@ theme_override_fonts/normal_font = ExtResource("1_vaj38")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/background = SubResource("StyleBoxFlat_0y7d8")
 bbcode_enabled = true
-text = "Welcome to \"Pathfinder: Dijkstra’s Algorithm in Action\" — a game that demonstrates the elegance of pathfinding through Dijkstra's Algorithm in three interactive modes. Each mode challenges the player to navigate towards a goal, showcasing the versatility of algorithmic solutions in real-world navigation.
+text = "Welcome to \"Vichochoro\" — a game that demonstrates the elegance of pathfinding through Dijkstra's Algorithm in three interactive modes. Each mode challenges the player to navigate towards a goal, showcasing the versatility of algorithmic solutions in real-world navigation.
 
     Simple Algorithm
     In this mode, the player places pins on the map, and the goal is to move towards the selected pin location. It’s a simple demonstration of how Dijkstra’s algorithm calculates the shortest path, offering a clear and intuitive example of basic pathfinding.
@@ -121,6 +122,19 @@ text = "Final Algorithm"
 layout_mode = 2
 text = "Quit
 "
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 4.0
+offset_right = 463.0
+offset_bottom = 45.0
+text = "VICHOCHORO"
+label_settings = SubResource("LabelSettings_remdo")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(523, 499)
+texture = ExtResource("3_m0yup")
 
 [connection signal="pressed" from="Panel2/VBoxContainer/btn_movement" to="." method="_on_btn_movement_pressed"]
 [connection signal="pressed" from="Panel2/VBoxContainer/btn_collision" to="." method="_on_btn_collision_pressed"]

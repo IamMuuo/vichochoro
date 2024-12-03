@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ban4e1fm8cm6k"]
+
+[ext_resource type="Script" path="res://actors/pin/pin.gd" id="1_a7kh0"]
+[ext_resource type="Texture2D" uid="uid://dq0dg4b2p3yf8" path="res://assets/locator.png" id="1_lxa1p"]
+
+[node name="Pin" type="Node2D"]
+script = ExtResource("1_a7kh0")
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_lxa1p")

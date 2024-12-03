@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvvrvavnkxi24"]
+
+[ext_resource type="Script" path="res://actors/destination/destination.gd" id="1_876rk"]
+[ext_resource type="Texture2D" uid="uid://bvdyr2e8w280g" path="res://assets/cross.png" id="1_j2i0f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxs6p"]
+
+[node name="Destination" type="Area2D"]
+scale = Vector2(6, 6)
+script = ExtResource("1_876rk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vxs6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_j2i0f")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "Success"
+initial_position = 1
+size = Vector2i(300, 300)
+visible = true
+dialog_text = "You have sucessfully reached the destination"
+dialog_autowrap = true
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]

@@ -21,3 +21,7 @@ func _on_btn_exit_pressed() -> void:
 
 func _on_btn_collision_pressed() -> void:
 	get_tree().change_scene_to_file("res://levels/collision.tscn")
+
+
+func _on_button_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/path.tscn")

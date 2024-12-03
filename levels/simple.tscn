@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmhgihqpjt661"]
+[gd_scene load_steps=4 format=3 uid="uid://bmhgihqpjt661"]
 
 [ext_resource type="PackedScene" uid="uid://dqh8qrjvk7mo3" path="res://actors/player/Player.tscn" id="1_3yewk"]
 [ext_resource type="PackedScene" uid="uid://ban4e1fm8cm6k" path="res://actors/pin/pin.tscn" id="2_snlmn"]
+[ext_resource type="PackedScene" uid="uid://bvvrvavnkxi24" path="res://actors/destination/destination.tscn" id="3_xi6vd"]
 
 [node name="World" type="Node2D"]
 
@@ -11,3 +12,6 @@ pin = NodePath("../Pin")
 
 [node name="Pin" parent="." instance=ExtResource("2_snlmn")]
 position = Vector2(100, 350)
+
+[node name="Destination" parent="." instance=ExtResource("3_xi6vd")]
+position = Vector2(1177, 617)

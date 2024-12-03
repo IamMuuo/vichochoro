@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bjk0b6bjwt1pw"]
+[gd_scene load_steps=7 format=4 uid="uid://bjk0b6bjwt1pw"]
 
 [ext_resource type="Texture2D" uid="uid://druroheqfc6mc" path="res://assets/TilesNew-export.png" id="1_x1nuu"]
 [ext_resource type="PackedScene" uid="uid://dqh8qrjvk7mo3" path="res://actors/player/Player.tscn" id="2_bdcse"]
 [ext_resource type="PackedScene" uid="uid://ban4e1fm8cm6k" path="res://actors/pin/pin.tscn" id="3_dhlam"]
+[ext_resource type="PackedScene" uid="uid://bvvrvavnkxi24" path="res://actors/destination/destination.tscn" id="4_lob7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40aj7"]
 texture = ExtResource("1_x1nuu")
@@ -61,3 +62,6 @@ pin = NodePath("../Pin")
 
 [node name="Pin" parent="." instance=ExtResource("3_dhlam")]
 position = Vector2(197, 634)
+
+[node name="Destination" parent="." instance=ExtResource("4_lob7b")]
+position = Vector2(1188, 619)

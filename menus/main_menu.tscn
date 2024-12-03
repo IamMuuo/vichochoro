@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://doj18q07b6vsv"]
+
+[ext_resource type="FontFile" uid="uid://pxv3ebfni43q" path="res://assets/chinese rocks rg.ttf" id="1_vaj38"]
+[ext_resource type="Script" path="res://menus/main_menu.gd" id="1_wlelf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg07k"]
+bg_color = Color(0.49415, 0.118198, 1, 1)
+expand_margin_left = 12.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_remdo"]
+font = ExtResource("1_vaj38")
+font_size = 33
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y7d8"]
+bg_color = Color(0.49415, 0.118198, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye5x3"]
+bg_color = Color(4.04298e-06, 0.656023, 0.864748, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_de623"]
+line_spacing = 22.0
+font = ExtResource("1_vaj38")
+font_size = 22
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wlelf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 830.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg07k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Not Everything should be AI"
+label_settings = SubResource("LabelSettings_remdo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.856067, 0.856067, 0.856067, 1)
+theme_override_fonts/normal_font = ExtResource("1_vaj38")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_0y7d8")
+bbcode_enabled = true
+text = "Welcome to \"Pathfinder: Dijkstra’s Algorithm in Action\" — a game that demonstrates the elegance of pathfinding through Dijkstra's Algorithm in three interactive modes. Each mode challenges the player to navigate towards a goal, showcasing the versatility of algorithmic solutions in real-world navigation.
+
+    Simple Algorithm
+    In this mode, the player places pins on the map, and the goal is to move towards the selected pin location. It’s a simple demonstration of how Dijkstra’s algorithm calculates the shortest path, offering a clear and intuitive example of basic pathfinding.
+
+    Collision Detection
+    Here, the challenge deepens. As pins are placed, obstacles may block the path. If the pin is located behind an obstacle, the player will be unable to move towards it, demonstrating how collision detection can affect pathfinding. This mode highlights the importance of considering the environment in navigation algorithms.
+
+    Final Algorithm
+    The final mode integrates everything. The player must navigate around obstacles, searching for the shortest path to reach the target pin, all while considering real-time collisions. This is where Dijkstra’s algorithm truly shines, providing a solution for dynamic, real-world navigation that adapts to changing conditions."
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -185.0
+offset_right = 190.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ye5x3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -68.0
+offset_right = 76.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Actions"
+label_settings = SubResource("LabelSettings_de623")
+horizontal_alignment = 1
+
+[node name="btn_movement" type="Button" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Simple"
+
+[node name="Button2" type="Button" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Collision Detection"
+
+[node name="Button3" type="Button" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Final Algorithm"
+
+[node name="btn_exit" type="Button" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="Panel2/VBoxContainer/btn_movement" to="." method="_on_btn_movement_pressed"]
+[connection signal="pressed" from="Panel2/VBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]

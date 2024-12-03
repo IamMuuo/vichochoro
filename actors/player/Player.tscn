@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqh8qrjvk7mo3"]
+[gd_scene load_steps=4 format=3 uid="uid://dqh8qrjvk7mo3"]
 
 [ext_resource type="Texture2D" uid="uid://pr21ma23g0ph" path="res://assets/player.png" id="1_0ilc6"]
+[ext_resource type="Script" path="res://actors/player/player.gd" id="1_c54tw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54mrl"]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_c54tw")
 
 [node name="sprite" type="Sprite2D" parent="."]
 rotation = 1.5708

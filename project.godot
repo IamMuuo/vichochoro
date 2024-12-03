@@ -12,8 +12,14 @@ config_version=5
 
 config/name="umoina"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0.0426225, 0.348728, 0.316937, 1)
 config/icon="res://icon.png"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.0426225, 0.348728, 0.316937, 1)
+environment/defaults/default_clear_color=Color(1, 0.913951, 0.712903, 1)
